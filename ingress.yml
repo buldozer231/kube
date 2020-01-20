@@ -1,0 +1,13 @@
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jenkins-ing
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: webserver # Name of the Service targeted by the Ingress
+          servicePort: 80 # Should match the port used by the Service
